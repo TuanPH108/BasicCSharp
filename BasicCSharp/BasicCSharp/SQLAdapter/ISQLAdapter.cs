@@ -1,19 +1,22 @@
 ﻿namespace basic_csharp.SQLAdapter
 {
-    public interface ISQLAdapter
+    /// <summary>
+    /// SQL Adapter Interface
+    /// </summary>
+    public interface ISQLAdapter<T> where T : class, new()
     {
         public string ConnectionString { get; set; }
 
         public string TableName { get; set; }
 
-        List<T> GetData<T>() where T : class, new();
+        List<T> GetData();
 
-        T Get<T>(Guid id) where T : class, new();
+        T Get(Guid id);
 
-        int Insert<T>(T item) where T : class, new();
+        int Insert(T item);
 
-        int Update<T>(T item) where T : class, new();
+        int Update(T item);
 
-        int Delete<T>(Guid id) where T : class, new();
+        int Delete(Guid id);
     }
 }

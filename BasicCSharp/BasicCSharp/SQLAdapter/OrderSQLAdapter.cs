@@ -1,9 +1,8 @@
-﻿using Microsoft.Data.SqlClient;
-using System.Data;
+﻿using BasicCSharp.Object;
 
 namespace basic_csharp.SQLAdapter
 {
-    public class OrderSQLAdapter : ISQLAdapter
+    public class OrderSQLAdapter : ISQLAdapter<Orders>
     {
         public string ConnectionString { get; set; }
         public string TableName { get; set; }
@@ -11,39 +10,30 @@ namespace basic_csharp.SQLAdapter
         public OrderSQLAdapter(string connectionString)
         {
             this.ConnectionString = connectionString;
-            this.TableName = "Product";
+            this.TableName = "ORDERS";
         }
 
-        public int Delete<T>(Guid id) where T : class, new()
+        public List<Orders> GetData()
         {
             throw new NotImplementedException();
         }
 
-        public T Get<T>(Guid id) where T : class, new()
+        public Orders Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public List<T> GetData<T>() where T : class, new()
+        public int Insert(Orders item)
         {
             throw new NotImplementedException();
-
         }
 
-        public int Insert<T>(T item) where T : class, new()
+        public int Update(Orders item)
         {
-            try
-            {
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return 0;
-            }
+            throw new NotImplementedException();
         }
 
-        public int Update<T>(T item) where T : class, new()
+        public int Delete(Guid id)
         {
             throw new NotImplementedException();
         }

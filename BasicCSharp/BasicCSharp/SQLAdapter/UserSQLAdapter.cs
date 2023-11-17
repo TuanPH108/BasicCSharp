@@ -1,9 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
-using System.Data;
+﻿using System.Data;
+using BasicCSharp.Object;
+using Microsoft.Data.SqlClient;
 
 namespace basic_csharp.SQLAdapter
 {
-    public class UserSQLAdapter : ISQLAdapter
+    public class UserSQLAdapter : ISQLAdapter<Users>
     {
         public string ConnectionString { get; set; }
         public string TableName { get; set; }
@@ -11,39 +12,110 @@ namespace basic_csharp.SQLAdapter
         public UserSQLAdapter(string connectionString)
         {
             this.ConnectionString = connectionString;
-            this.TableName = "Users";
+            this.TableName = "USERS";
         }
 
-        public int Delete<T>(Guid id) where T : class, new()
+        public List<Users> GetData()
         {
-            throw new NotImplementedException();
-        }
+            //Set up Connection
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
 
-        public T Get<T>(Guid id) where T : class, new()
-        {
-            throw new NotImplementedException();
-        }
+            //Mapping and Filling Data
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.TableMappings.Add("Table", TableName);
+            adapter.SelectCommand = new SqlCommand(@"Select * From Users", connection);
 
-        public List<T> GetData<T>() where T : class, new()
-        {
-            throw new NotImplementedException();
+            DataTable temp_table = new DataTable();
+            adapter.Fill(temp_table);
 
-        }
-
-        public int Insert<T>(T item) where T : class, new()
-        {
-            try
+            //Solving
+            List<Users> User_Selected = new List <Users>();
+            foreach(DataRow row in temp_table.Rows)
             {
-                return 1;
+                Users temp_user = new Users();
+                temp_user.User_ID = (Guid)row["User_ID"];
+                temp_user.User_Name = (string)row["User_Name"];
+                temp_user.User_Birthday = (string)row["User_Birthday"];
+                temp_user.User_Email = (string)row["User_Email"];
+                temp_user.User_Contact = (string)row["User_Contact"];
+                User_Selected.Add(temp_user);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return 0;
-            }
+            connection.Close();
+            return User_Selected;
         }
 
-        public int Update<T>(T item) where T : class, new()
+        public Users Get(Guid id)
+        {
+            //Set up Connection
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
+
+            //Mapping and Filling Data
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.TableMappings.Add("Table", TableName);
+            adapter.SelectCommand = new SqlCommand(@"Select * From Users", connection);
+
+            DataTable temp_table = new DataTable();
+            adapter.Fill(temp_table);
+
+            //Solving
+            Users temp_user = new Users();
+
+            foreach (DataRow row in temp_table.Rows)
+            {
+                if (id == (Guid)row["User_ID"])
+                {
+                    temp_user.User_ID = (Guid)row["User_ID"];
+                    temp_user.User_Name = (string)row["User_Name"];
+                    temp_user.User_Birthday = (string)row["User_Birthday"];
+                    temp_user.User_Email = (string)row["User_Email"];
+                    temp_user.User_Contact = (string)row["User_Contact"];
+                }
+            }
+            connection.Close();
+            return temp_user;
+        }
+
+        public int Insert(Users item)
+        {
+            //Set up Connection
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.TableMappings.Add("Table", TableName);
+
+            adapter.InsertCommand = new SqlCommand(@"INSERT INTO Users (User_Name, User_Birthday, User_Email, User VALUES(@User_Name, @User_Birthday, @User_Email, @User_Contact", connection);
+
+             //Insert Data
+            adapter.InsertCommand.Parameters.Add("@User_Name", SqlDbType.VarChar,100,item.User_Name);
+            adapter.InsertCommand.Parameters.Add("@User_Birthday", SqlDbType.VarChar, 20, item.User_Birthday);
+            adapter.InsertCommand.Parameters.Add("@User_Email", SqlDbType.VarChar, 100, item.User_Email);
+            adapter.InsertCommand.Parameters.Add("@User_Contact", SqlDbType.VarChar, 20, item.User_Contact);
+         
+            connection.Close();
+            //1 row added
+            return 1;
+        }
+
+        public int Update(Users item)
+        {
+            //Set up Connection
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
+
+            //Update
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.TableMappings.Add("Table", TableName);
+            adapter.UpdateCommand = new SqlCommand(@"UPDATE Users SET Users.User_Email = @User_Email  WHERE Users.Users_Name = @User_Name",connection);
+            adapter.UpdateCommand.Parameters.Add("@User_Email", SqlDbType.VarChar, 100, item.User_Email);
+            adapter.UpdateCommand.Parameters.Add("@User_Name", SqlDbType.VarChar, 100, item.User_Name);
+
+            return 1;
+        }
+
+        public int Delete(Guid id)
         {
             throw new NotImplementedException();
         }

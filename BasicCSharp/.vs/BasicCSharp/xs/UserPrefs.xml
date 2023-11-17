@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{D93363EB-3D32-4067-B4A6-2958EC799D16}|Default">
+  <MonoDevelop.Ide.ItemProperties.BasicCSharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BasicCSharp/Object/Users.cs">
+    <Files>
+      <File FileName="BasicCSharp/SQLAdapter/UserSQLAdapter.cs" Line="31" Column="13" NotebookId="1" IsPinned="True" />
+      <File FileName="BasicCSharp/Program.cs" Line="13" Column="1" NotebookId="1" IsPinned="True" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="38" Y="-1050" Width="1680" Height="1025">
+        <Files>
+          <File FileName="BasicCSharp/Object/Users.cs" Line="17" Column="12" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BasicCSharp">
+            <Node name="BasicCSharp">
+              <Node name="Object" expanded="True">
+                <Node name="Users.cs" selected="True" />
+              </Node>
+              <Node name="SQLAdapter" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
