@@ -48,11 +48,6 @@ Z:/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/Debug/net6.0/refint/
 Z:/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.pdb
 Z:/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.genruntimeconfig.cache
 Z:/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/Debug/net6.0/ref/BasicCSharp.dll
-/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.csproj.AssemblyReference.cache
-/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.GeneratedMSBuildEditorConfig.editorconfig
-/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.AssemblyInfoInputs.cache
-/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.AssemblyInfo.cs
-/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.csproj.CoreCompileInputs.cache
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/BasicCSharp
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/BasicCSharp.deps.json
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/BasicCSharp.runtimeconfig.json
@@ -92,6 +87,11 @@ Z:/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/Debug/net6.0/ref/Bas
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
+/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.csproj.AssemblyReference.cache
+/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.AssemblyInfoInputs.cache
+/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.AssemblyInfo.cs
+/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.csproj.CoreCompileInputs.cache
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.csproj.CopyComplete
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/BasicCSharp.dll
 /Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/Debug/net6.0/refint/BasicCSharp.dll

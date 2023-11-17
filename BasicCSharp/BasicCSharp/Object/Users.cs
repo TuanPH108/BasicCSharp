@@ -14,8 +14,9 @@ namespace BasicCSharp.Object
         public string User_Birthday {  get; set; } = string.Empty;
         public string User_Contact {  get; set; } = string.Empty;
 
-        public Users (string Name, string Birthday, string Email, string Contact)
-        {
+        public Users (Guid ID, string Name, string Birthday, string Email, string Contact)
+        { 
+            this.User_ID = ID;
             this.User_Name = Name;
             this.User_Birthday = Birthday;
             this.User_Email = Email;

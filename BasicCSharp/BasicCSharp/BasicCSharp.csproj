@@ -13,10 +13,8 @@
 
   <ItemGroup>
     <None Remove="BusinessService\" />
-    <None Remove="Testing\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessService\" />
-    <Folder Include="Testing\" />
   </ItemGroup>
 </Project>
