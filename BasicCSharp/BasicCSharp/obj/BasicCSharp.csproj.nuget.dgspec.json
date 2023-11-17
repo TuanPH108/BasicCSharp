@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {}
+    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {}
   },
   "projects": {
-    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {
+    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
+        "projectUniqueName": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
         "projectName": "BasicCSharp",
-        "projectPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
+        "projectPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
         "packagesPath": "/Users/phanhoangtuan/.nuget/packages/",
-        "outputPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/obj/",
+        "outputPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/phanhoangtuan/.nuget/NuGet/NuGet.Config"

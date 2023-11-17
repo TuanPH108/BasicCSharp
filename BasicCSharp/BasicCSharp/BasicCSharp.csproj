@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="BusinessService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessService\" />
+  </ItemGroup>
 </Project>

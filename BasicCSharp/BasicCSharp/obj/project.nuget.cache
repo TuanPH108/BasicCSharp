@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vqdYDf/GdTwzvHOgvIMEqGolMUGUu8TOoQipwmQatFgC9T3N1o74PSCMZBjo9RR+qv7udmDQkE3opnNvn42Vgw==",
+  "dgSpecHash": "rGMYkJUezPpxOdBpwN1sGPP8slh1Zx9Z6J/KRC5tGRNtnBPeWip1dSzxEvdAdzpAdlt+hGiEoIiffAKwo6/EZg==",
   "success": true,
-  "projectFilePath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Day-2/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
+  "projectFilePath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
   "expectedPackageFiles": [
     "/Users/phanhoangtuan/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/phanhoangtuan/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
