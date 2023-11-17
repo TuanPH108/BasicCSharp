@@ -11,14 +11,17 @@ TrustServerCertificate=True
 
 UserSQLAdapter User_Adapter = new UserSQLAdapter(SQL_Connection);
 
-//Test Get Data base on ID
-Users user1 = User_Adapter.Get(Guid.Parse("b99590f5-76ac-4a15-9988-8abf37304746"));
+////Test Get Data base on ID
+//Users user1 = User_Adapter.Get(Guid.Parse("b99590f5-76ac-4a15-9988-8abf37304746"));
 
-Console.WriteLine("#__USERS__#Select * From Users Where Users.User_ID = .... by Get(ID) Method##\n");
-Console.WriteLine($"{user1.User_ID}, {user1.User_Name}, {user1.User_Birthday}, {user1.User_Email}, {user1.User_Contact}");
+//Console.WriteLine("#__USERS__#Select * From Users Where Users.User_ID = .... by Get(ID) Method##\n");
+//Console.WriteLine($"{user1.User_ID}, {user1.User_Name}, {user1.User_Birthday}, {user1.User_Email}, {user1.User_Contact}");
 
-//Test  with Already Object
-Users insertUser = new Users(Guid.NewGuid(), "Tuan PH 108 ", "2000-08-08", "TuanPH108@gmail.com", "0857766738");
+////Test  with Already Object
+
+
+Users insertUser = new Users( Guid.NewGuid(), "TuanPH108 ", "2000-08-08", "TuanPH108@gmail.com", "0857766738");
+
 Console.WriteLine("\n#__USER__##Insert into Users ==> " + User_Adapter.Insert(insertUser) + " row was added");
 
 

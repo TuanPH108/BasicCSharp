@@ -15,12 +15,12 @@ namespace BasicCSharp.Object
         public string User_Contact {  get; set; } = string.Empty;
 
         public Users (Guid ID, string Name, string Birthday, string Email, string Contact)
-        { 
-            this.User_ID = ID;
-            this.User_Name = Name;
-            this.User_Birthday = Birthday;
-            this.User_Email = Email;
-            this.User_Contact = Contact;
+        {
+            User_ID = ID;
+            User_Name = Name;
+            User_Birthday = Birthday;
+            User_Email = Email;
+            User_Contact = Contact;
         }
         public Users()
         {
