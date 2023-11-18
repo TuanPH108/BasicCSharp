@@ -310,6 +310,9 @@
           }
         }
       },
+      "SonarAnalyzer.CSharp/9.12.0.78982": {
+        "type": "package"
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1179,6 +1182,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "SonarAnalyzer.CSharp/9.12.0.78982": {
+      "sha512": "QxhfMFCNeZWP3gP/R8QM3MuDWm+Esj8Lt3oD61tid5TPuqsaKJtwMZNZWE2FOqqGuKlu3805o8MlkTWBL75skA==",
+      "type": "package",
+      "path": "sonaranalyzer.csharp/9.12.0.78982",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/Google.Protobuf.dll",
+        "analyzers/SonarAnalyzer.CFG.dll",
+        "analyzers/SonarAnalyzer.CSharp.dll",
+        "analyzers/SonarAnalyzer.dll",
+        "images/sonarsource_64.png",
+        "license/THIRD-PARTY-NOTICES.txt",
+        "sonaranalyzer.csharp.9.12.0.78982.nupkg.sha512",
+        "sonaranalyzer.csharp.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
       "type": "package",
@@ -1999,28 +2022,31 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.Data.SqlClient >= 5.1.2"
+      "Microsoft.Data.SqlClient >= 5.1.2",
+      "SonarAnalyzer.CSharp >= 9.12.0.78982"
     ]
   },
   "packageFolders": {
-    "/Users/phanhoangtuan/.nuget/packages/": {}
+    "C:\\Users\\phanhoangtuan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
+      "projectUniqueName": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
       "projectName": "BasicCSharp",
-      "projectPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
-      "packagesPath": "/Users/phanhoangtuan/.nuget/packages/",
-      "outputPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/",
+      "projectPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
+      "packagesPath": "C:\\Users\\phanhoangtuan\\.nuget\\packages\\",
+      "outputPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/phanhoangtuan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\phanhoangtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2042,6 +2068,12 @@
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[5.1.2, )"
+          },
+          "SonarAnalyzer.CSharp": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[9.12.0.78982, )"
           }
         },
         "imports": [
@@ -2060,7 +2092,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

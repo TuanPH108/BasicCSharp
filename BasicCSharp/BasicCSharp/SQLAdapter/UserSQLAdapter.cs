@@ -65,7 +65,7 @@ namespace basic_csharp.SQLAdapter
 
 			foreach (DataRow row in temp_table.Rows)
 			{
-				if ( id == (Guid) row["User_ID"])
+				if ( id.CompareTo((Guid) row["User_ID"]) == 0)
 				{
 					temp_user.User_ID = (Guid) row["User_ID"];
 					temp_user.User_Name = (string)row["User_Name"];
@@ -78,7 +78,10 @@ namespace basic_csharp.SQLAdapter
 			return temp_user;
 		}
 
-		public int Insert(Users item)
+
+		
+
+		public int Insert (Users item)
 		{
 			//Set up Connection
 			SqlConnection connection = new SqlConnection(ConnectionString);
@@ -87,23 +90,27 @@ namespace basic_csharp.SQLAdapter
 			SqlDataAdapter adapter = new SqlDataAdapter();
 			adapter.TableMappings.Add("Table", TableName);
 
-			//Insert Data
-			SqlCommand command = new ("INSERT INTO Users (User_ID, User_Name, User_Birthday, User_Email, User VALUES(@User_ID, @User_Name, @User_Birthday, @User_Email, @User_Contact", connection);
 
-			adapter.InsertCommand.Parameters.Add("@User_ID", SqlDbType.UniqueIdentifier, default, item.User_ID.ToString());
-			adapter.InsertCommand.Parameters.Add("@User_Name", SqlDbType.VarChar, 100, item.User_Name);
-			adapter.InsertCommand.Parameters.Add("@User_Birthday", SqlDbType.VarChar, 20, item.User_Birthday);
-			adapter.InsertCommand.Parameters.Add("@User_Email", SqlDbType.VarChar, 100, item.User_Email);
-			adapter.InsertCommand.Parameters.Add("@User_Contact", SqlDbType.VarChar, 20, item.User_Contact);
+			//Insert Data
+			string stringQuery = "INSERT INTO Users ( User_Name, User_Birthday, User_Email, User_Contact) " +
+				"VALUES ( @UserName, @UserBirthday, @UserEmail, @UserContact)";
+            SqlCommand command = new SqlCommand(stringQuery, connection);
+
+			command.Parameters.AddWithValue("@UserName", item.User_Name);
+            command.Parameters.AddWithValue("@UserBirthday", item.User_Birthday);
+            command.Parameters.AddWithValue("@UserEmail", item.User_Email);
+            command.Parameters.AddWithValue("@UserContact", item.User_Contact);
+
+            command.ExecuteNonQuery();
 
 			adapter.InsertCommand = command;
 
-
-			connection.Close();
+            connection.Close();
 			//1 row added
 			return 1;
 		}
 
+		
 		public int Update(Users item)
 		{
 			//Set up Connection

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {}
+    "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj": {}
   },
   "projects": {
-    "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj": {
+    "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
+        "projectUniqueName": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
         "projectName": "BasicCSharp",
-        "projectPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/BasicCSharp.csproj",
-        "packagesPath": "/Users/phanhoangtuan/.nuget/packages/",
-        "outputPath": "/Users/phanhoangtuan/Desktop/FSoft/Module-2/Progress-1/BasicCSharp/BasicCSharp/obj/",
+        "projectPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
+        "packagesPath": "C:\\Users\\phanhoangtuan\\.nuget\\packages\\",
+        "outputPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/phanhoangtuan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\phanhoangtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +43,12 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.2, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.12.0.78982, )"
             }
           },
           "imports": [
@@ -59,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.311/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

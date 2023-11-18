@@ -22,9 +22,6 @@ namespace BasicCSharp.Object
             User_Email = Email;
             User_Contact = Contact;
         }
-        public Users()
-        {
-
-        }
+        public Users() { }
     }
 }
