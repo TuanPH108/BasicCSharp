@@ -13,7 +13,7 @@ namespace basic_csharp.SQLAdapter
 		public UserSQLAdapter(string connectionString)
 		{
 			this.ConnectionString = connectionString;
-			this.TableName = "USERS";
+			this.TableName = "Users";
 		}
 
 		public List<Users> GetData()
@@ -103,14 +103,16 @@ namespace basic_csharp.SQLAdapter
 
             command.ExecuteNonQuery();
 
-			adapter.InsertCommand = command;
+            adapter.InsertCommand = command;
+
+           
 
             connection.Close();
 			//1 row added
 			return 1;
 		}
 
-		
+
 		public int Update(Users item)
 		{
 			//Set up Connection
@@ -119,26 +121,46 @@ namespace basic_csharp.SQLAdapter
 
 			//Update
 			SqlDataAdapter adapter = new SqlDataAdapter();
+			try
+			{
+                SqlCommand command = new SqlCommand("UPDATE Users SET Users.User_Email = @User_Email  WHERE Users.User_Name = @User_Name", connection);
 
-			adapter.TableMappings.Add("Table", TableName);
-			adapter.UpdateCommand = new SqlCommand("UPDATE Users SET Users.User_Email = @User_Email  WHERE Users.Users_ID = @User_ID",connection);
+                adapter.TableMappings.Add("Table", TableName);
 
-			adapter.UpdateCommand.Parameters.Add("@User_Email", SqlDbType.VarChar, 100, item.User_Email);
-			adapter.UpdateCommand.Parameters.Add("@User_ID", SqlDbType.VarChar, 100, $"{item.User_ID}");
-			   
+                command.Parameters.AddWithValue("@User_Email", item.User_Email);
+                command.Parameters.AddWithValue("@User_Name", item.User_Name);
 
+                command.ExecuteNonQuery();
 
-			
+                connection.Close();
 
-
-			connection.Close();
-
-			return 1;
-		}
+            }
+			catch(Exception ex) 
+			{
+				Console.WriteLine("Unidentify value to update");
+            }
+            return 1;
+        }
 
 		public int Delete(Guid id)
 		{
-			throw new NotImplementedException();
+			SqlDataAdapter adapter = new SqlDataAdapter();
+			SqlConnection connection = new SqlConnection(ConnectionString);
+			adapter.TableMappings.Add("Table", TableName);
+
+			try
+			{
+				SqlCommand command = new SqlCommand(@"DELETE FROM Users WHERE Users.User_ID = @User_ID ");
+				command.Parameters.AddWithValue("@User_ID", id);
+
+				command.ExecuteNonQuery();
+				connection.Close();
+			}
+			catch(Exception ex) 
+			{
+				Console.WriteLine("Unidentify to Delete");
+			}
+			return 1;
 		}
-	}
+    }
 }

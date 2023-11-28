@@ -1,8 +1,5 @@
 ﻿namespace basic_csharp.SQLAdapter
 {
-    /// <summary>
-    /// SQL Adapter Interface
-    /// </summary>
     public interface ISQLAdapter<T> where T : class, new()
     {
         public string ConnectionString { get; set; }
