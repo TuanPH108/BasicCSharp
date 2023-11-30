@@ -2033,11 +2033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
       "projectName": "BasicCSharp",
-      "projectPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
       "packagesPath": "C:\\Users\\phanhoangtuan\\.nuget\\packages\\",
-      "outputPath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

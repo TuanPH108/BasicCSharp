@@ -18,7 +18,4 @@
   <ItemGroup>
     <None Remove="BusinessService\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessService\" />
-  </ItemGroup>
 </Project>

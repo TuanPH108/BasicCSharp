@@ -103,8 +103,6 @@ namespace basic_csharp.SQLAdapter
 
             command.ExecuteNonQuery();
 
-            adapter.InsertCommand = command;
-
            
 
             connection.Close();

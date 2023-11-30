@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oSWXGGXDe1vhtY3u9TTjd5fk0fnzPWYFroO/6o7o1XcoBhVY3tOSmK8UQnswfql57BcCouXX4fPUVl/TAjs2Zw==",
+  "dgSpecHash": "4pm4VkOu8NV3g1IQBMCwcFEaowMxjAwP5STSshFQw/gst18t1uxl8JrP68uXkPXNSeI32/UCd4bk21w2jxs7bw==",
   "success": true,
-  "projectFilePath": "Z:\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Desktop\\FSoft\\Module-2\\Progress-1\\BasicCSharp\\BasicCSharp\\BasicCSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phanhoangtuan\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phanhoangtuan\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

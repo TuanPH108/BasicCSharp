@@ -110,8 +110,6 @@ namespace basic_csharp.SQLAdapter
             command.Parameters.AddWithValue("@Product_Version", item.Product_Version);
 
 
-            adapter.InsertCommand = command;
-
             command.ExecuteNonQuery();
 
             connection.Close();
