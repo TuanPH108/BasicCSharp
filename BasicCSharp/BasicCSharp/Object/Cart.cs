@@ -8,6 +8,7 @@ namespace BasicCSharp.Object
 {
     public class Cart
     {
+
         public Guid Cart_ID { get; set; }
         public Guid Cart_User_ID { get; set; }
     }

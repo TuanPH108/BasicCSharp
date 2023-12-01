@@ -74,22 +74,17 @@ namespace basic_csharp.SQLAdapter
 					temp_user.User_Contact = (string)row["User_Contact"];
 				}
 			}
+
 			connection.Close();
 			return temp_user;
 		}
-
-
-		
 
 		public int Insert (Users item)
 		{
 			//Set up Connection
 			SqlConnection connection = new SqlConnection(ConnectionString);
+
 			connection.Open();
-
-			SqlDataAdapter adapter = new SqlDataAdapter();
-			adapter.TableMappings.Add("Table", TableName);
-
 
 			//Insert Data
 			string stringQuery = "INSERT INTO Users ( User_Name, User_Birthday, User_Email, User_Contact) " +
@@ -101,64 +96,62 @@ namespace basic_csharp.SQLAdapter
             command.Parameters.AddWithValue("@UserEmail", item.User_Email);
             command.Parameters.AddWithValue("@UserContact", item.User_Contact);
 
-            command.ExecuteNonQuery();
-
-           
+            int Notify = command.ExecuteNonQuery();
 
             connection.Close();
 			//1 row added
-			return 1;
+			return Notify;
 		}
-
 
 		public int Update(Users item)
 		{
 			//Set up Connection
 			SqlConnection connection = new SqlConnection(ConnectionString);
+			int Notify = 0;
 			connection.Open();
 
 			//Update
-			SqlDataAdapter adapter = new SqlDataAdapter();
 			try
 			{
                 SqlCommand command = new SqlCommand("UPDATE Users SET Users.User_Email = @User_Email  WHERE Users.User_Name = @User_Name", connection);
 
-                adapter.TableMappings.Add("Table", TableName);
-
                 command.Parameters.AddWithValue("@User_Email", item.User_Email);
                 command.Parameters.AddWithValue("@User_Name", item.User_Name);
 
-                command.ExecuteNonQuery();
+                Notify = command.ExecuteNonQuery();
 
                 connection.Close();
-
             }
 			catch(Exception ex) 
 			{
 				Console.WriteLine("Unidentify value to update");
             }
-            return 1;
+            return Notify;
         }
 
 		public int Delete(Guid id)
 		{
-			SqlDataAdapter adapter = new SqlDataAdapter();
 			SqlConnection connection = new SqlConnection(ConnectionString);
-			adapter.TableMappings.Add("Table", TableName);
+			string DeleteQuery = "DELETE FROM  Users WHERE Users.User_ID = @User_ID";
 
+			connection.Open();
+
+            int Notify = 0;
 			try
 			{
-				SqlCommand command = new SqlCommand(@"DELETE FROM Users WHERE Users.User_ID = @User_ID ");
+				SqlCommand command = new SqlCommand(DeleteQuery, connection);
 				command.Parameters.AddWithValue("@User_ID", id);
 
-				command.ExecuteNonQuery();
+				Notify = command.ExecuteNonQuery();
 				connection.Close();
 			}
 			catch(Exception ex) 
 			{
-				Console.WriteLine("Unidentify to Delete");
+				Console.WriteLine(ex.ToString());
 			}
-			return 1;
+
+			connection.Close();
+			return Notify;
 		}
     }
 }

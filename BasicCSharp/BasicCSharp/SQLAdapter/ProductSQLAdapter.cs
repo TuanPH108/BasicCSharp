@@ -91,12 +91,9 @@ namespace basic_csharp.SQLAdapter
         {
             //Set up Connection
             SqlConnection connection = new SqlConnection(ConnectionString);
+
             connection.Open();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.TableMappings.Add("Table", TableName);
-
-
+            int Notify = 0;
             //Insert Data
             string stringQuery = "INSERT INTO Products (Product_Name, Product_Description, Product_Category, Product_Version, Product_Type, Product_Price) " +
                 "VALUES (@Product_Name, @Product_Description, @Product_Category, @Product_Version, @Product_Type, @Product_Price)";
@@ -110,51 +107,48 @@ namespace basic_csharp.SQLAdapter
             command.Parameters.AddWithValue("@Product_Version", item.Product_Version);
 
 
-            command.ExecuteNonQuery();
+            Notify = command.ExecuteNonQuery();
 
             connection.Close();
             //1 row added
-            return 1;
+            return Notify;
         }
 
         public int Update(Product item)
         {
             //Set up Connection
             SqlConnection connection = new SqlConnection(ConnectionString);
-            connection.Open();
 
+            connection.Open();
+            int Notify = 0;
             //Update
-            SqlDataAdapter adapter = new SqlDataAdapter();
             try
             {
                 SqlCommand command = new SqlCommand("UPDATE Products SET Products.Product_Name = @Product_Name  WHERE Products.Product_ID = @Product_ID", connection);
 
-                adapter.TableMappings.Add("Table", TableName);
-
                 command.Parameters.AddWithValue("@Product_ID", item.Product_ID);
                 command.Parameters.AddWithValue("@Product_Name", item.Product_Name);
 
-                command.ExecuteNonQuery();
-
-                connection.Close();
-
+                Notify = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Unidentify value to update");
             }
-            return 1;
+
+            connection.Close();
+            return Notify;
         }
 
         public int Delete(Guid id)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection connection = new SqlConnection(ConnectionString);
-            adapter.TableMappings.Add("Table", TableName);
+            int Notify = 0;
 
+            connection.Open();
             try
             {
-                SqlCommand command = new SqlCommand(@"DELETE FROM Products WHERE Products.Product_ID = @Product_ID ");
+                SqlCommand command = new SqlCommand(@"DELETE FROM Products WHERE Products.Product_ID = @Product_ID ", connection);
                 command.Parameters.AddWithValue("@Product_ID", id);
 
                 command.ExecuteNonQuery();
@@ -164,7 +158,8 @@ namespace basic_csharp.SQLAdapter
             {
                 Console.WriteLine("Unidentify to Delete");
             }
-            return 1;
+            connection.Close();
+            return Notify;
         }
 
     }

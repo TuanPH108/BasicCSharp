@@ -77,11 +77,9 @@ namespace basic_csharp.SQLAdapter
         {
             //Set up Connection
             SqlConnection connection = new SqlConnection(ConnectionString);
+            int Notify = 0;
+
             connection.Open();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.TableMappings.Add("Table", TableName);
-
 
             //Insert Data
             string stringQuery = "INSERT INTO Cart ( Cart_ID, Cart_User_ID) " +
@@ -91,63 +89,60 @@ namespace basic_csharp.SQLAdapter
             command.Parameters.AddWithValue("@Cart_ID", item.Cart_ID);
             command.Parameters.AddWithValue("@Cart_User_ID", item.Cart_User_ID);
 
-            command.ExecuteNonQuery();
-
-           
+            Notify = command.ExecuteNonQuery();
 
             connection.Close();
             //1 row added
-            return 1;
+            return Notify;
         }
 
         public int Update(Cart item)
         {
             //Set up Connection
             SqlConnection connection = new SqlConnection(ConnectionString);
+            int Notify = 0;
+
             connection.Open();
 
             //Update
-            SqlDataAdapter adapter = new SqlDataAdapter();
             try
             {
                 SqlCommand command = new SqlCommand("UPDATE Cart SET Cart.Cart_User_ID = @Cart_User_ID  WHERE Cart.Cart_ID = @Cart_ID", connection);
 
-                adapter.TableMappings.Add("Table", TableName);
-
                 command.Parameters.AddWithValue("@Cart_ID", item.Cart_ID);
                 command.Parameters.AddWithValue("@Cart_User_ID", item.Cart_User_ID);
 
-                command.ExecuteNonQuery();
-
-                connection.Close();
-
+                Notify = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Unidentify value to update");
             }
-            return 1;
+
+            connection.Close();
+            return Notify;
         }
 
         public int Delete(Guid id)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection connection = new SqlConnection(ConnectionString);
-            adapter.TableMappings.Add("Table", TableName);
+            int Notify = 0;
 
+            connection.Open();
             try
             {
                 SqlCommand command = new SqlCommand(@"DELETE FROM Cart WHERE Cart.Cart_ID = @Cart_ID ");
                 command.Parameters.AddWithValue("@Cart_ID", id);
 
-                command.ExecuteNonQuery();
+               Notify = command.ExecuteNonQuery();
                 connection.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Unidentify to Delete");
             }
-            return 1;
+            connection.Close();
+            return Notify;
         }
     }
 }
